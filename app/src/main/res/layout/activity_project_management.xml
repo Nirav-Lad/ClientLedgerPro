@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProjectManagement">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="#F3F4F6"
+        android:gravity="center_horizontal">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Project Management"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#0B6CFF"
+            android:gravity="center"
+            android:layout_marginBottom="30dp"/>
+
+        <!-- Card for Project Input -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:elevation="4dp"
+            android:padding="16dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center">
+
+            <!-- Project Site Address Input -->
+            <EditText
+                android:id="@+id/siteAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Site Address"
+                android:inputType="textPostalAddress"
+                android:padding="12dp"
+                android:background="@drawable/edit_text_background"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Estimated Quotation Input -->
+            <EditText
+                android:id="@+id/quotation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Estimated Quotation"
+                android:inputType="numberDecimal"
+                android:padding="12dp"
+                android:background="@drawable/edit_text_background"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Project Description Input -->
+            <EditText
+                android:id="@+id/projectDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Project Description"
+                android:inputType="textMultiLine"
+                android:padding="12dp"
+                android:background="@drawable/edit_text_background"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:layout_marginBottom="20dp"/>
+        </LinearLayout>
+
+        <!-- Add Project Button -->
+        <Button
+            android:id="@+id/addProjectButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Project"
+            android:backgroundTint="#0B6CFF"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:padding="12dp"
+            android:layout_marginBottom="30dp"
+            android:elevation="6dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <!-- Project List Title -->
+        <TextView
+            android:id="@+id/projectListTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Existing Projects"
+            android:textSize="20sp"
+            android:textColor="#0B6CFF"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <!-- Project ListView -->
+        <ListView
+            android:id="@+id/projectListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@android:color/darker_gray"
+            android:dividerHeight="1dp"
+            android:padding="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/white"
+            android:elevation="4dp"/>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

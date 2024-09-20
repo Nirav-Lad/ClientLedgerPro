@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClientManagement">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="#F3F4F6"
+        android:gravity="center_horizontal">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Client Management"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#0B6CFF"
+            android:gravity="center"
+            android:layout_marginBottom="30dp"/>
+
+        <!-- Card for Client Input -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:elevation="4dp"
+            android:padding="16dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center">
+
+            <!-- Client Name Input -->
+            <EditText
+                android:id="@+id/clientName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Client Name"
+                android:inputType="textPersonName"
+                android:padding="12dp"
+                android:background="@drawable/edit_text_background"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Contact Information Input -->
+            <EditText
+                android:id="@+id/contactInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contact Information"
+                android:inputType="phone"
+                android:padding="12dp"
+                android:background="@drawable/edit_text_background"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Site Address Input -->
+            <EditText
+                android:id="@+id/siteAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Site Address"
+                android:inputType="textPostalAddress"
+                android:padding="12dp"
+                android:background="@drawable/edit_text_background"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:layout_marginBottom="20dp"/>
+        </LinearLayout>
+
+        <!-- Add Client Button -->
+        <Button
+            android:id="@+id/addClientButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Client"
+            android:backgroundTint="#0B6CFF"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:padding="12dp"
+            android:layout_marginBottom="30dp"
+            android:elevation="6dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <!-- Client List Title -->
+        <TextView
+            android:id="@+id/clientListTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Existing Clients"
+            android:textSize="20sp"
+            android:textColor="#0B6CFF"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <!-- Client ListView -->
+        <ListView
+            android:id="@+id/clientListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@android:color/darker_gray"
+            android:dividerHeight="1dp"
+            android:padding="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/white"
+            android:elevation="4dp"/>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
