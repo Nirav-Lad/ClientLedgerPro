@@ -13,16 +13,7 @@
         android:theme="@style/Theme.ClientLedgerPro"
         tools:targetApi="31">
         <activity
-            android:name=".DashBoard"
-            android:exported="false" />
-        <activity
-            android:name=".TransactionManagement"
-            android:exported="false" />
-        <activity
-            android:name=".ProjectManagement"
-            android:exported="false" />
-        <activity
-            android:name=".ClientManagement"
+            android:name=".client_dashboard"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
