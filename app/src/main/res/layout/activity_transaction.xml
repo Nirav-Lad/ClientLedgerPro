@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+
+    <!-- Header Container -->
+    <RelativeLayout
+        android:id="@+id/header_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_background"
+        android:padding="16dp">
+
+        <!-- Profile Icon -->
+        <ImageView
+            android:id="@+id/profile_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/ic_account_circle"
+            android:contentDescription="@string/ic_account_circle" />
+
+        <!-- Settings Icon -->
+        <ImageView
+            android:id="@+id/settings_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/logout"
+            android:contentDescription="@string/logout" />
+
+        <!-- User Name -->
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Nirav Lad"
+            android:textSize="24sp"
+            android:textColor="#000000"
+            android:textStyle="bold"/>
+
+        <!-- Welcome Text -->
+        <TextView
+            android:id="@+id/welcome_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_name"
+            android:layout_centerHorizontal="true"
+            android:text="Welcome to ClientLedgerPro"
+            android:textSize="14sp"
+            android:textColor="#000000"/>
+
+    </RelativeLayout>
+
+    <!-- Total Dues Section -->
+    <RelativeLayout
+        android:id="@+id/total_dues_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_background"
+        android:elevation="4dp"
+        android:padding="16dp"
+        android:layout_below="@id/header_container">
+
+        <TextView
+            android:id="@+id/total_dues_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Dues"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+        <TextView
+            android:id="@+id/total_dues_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹15,893"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#FF0000"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+
+    <!-- ScrollView for the transaction list -->
+    <ScrollView
+        android:id="@+id/scroll_transactions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/total_dues_container"
+        android:layout_above="@+id/add_transaction_button"
+        android:layout_marginTop="8dp"
+        tools:ignore="NotSibling">
+
+        <LinearLayout
+            android:id="@+id/transactions_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <!-- Sample Transaction Entry -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_background"
+                android:elevation="2dp"
+                android:padding="16dp"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/icon_transaction"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/delete"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"/>
+
+                <TextView
+                    android:id="@+id/transaction_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="16/9/2024"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_toEndOf="@id/icon_transaction"
+                    android:layout_alignParentTop="true"/>
+
+                <TextView
+                    android:id="@+id/transaction_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs.18,500"
+                    android:layout_toStartOf="@+id/chevron_right"
+                    android:layout_alignParentTop="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#FF000000"/>
+
+                <ImageView
+                    android:id="@+id/chevron_right"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/arrow_icon"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:id="@+id/transaction_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[Mr. Nirav Lad]"
+                    android:layout_below="@id/transaction_date"
+                    android:layout_toEndOf="@id/icon_transaction"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+            </RelativeLayout>
+            <!-- Sample Transaction Entry -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_background"
+                android:elevation="2dp"
+                android:padding="16dp"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/icon_transaction"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/delete"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"/>
+
+                <TextView
+                    android:id="@+id/transaction_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="16/9/2024"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_toEndOf="@id/icon_transaction"
+                    android:layout_alignParentTop="true"/>
+
+                <TextView
+                    android:id="@+id/transaction_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs.18,500"
+                    android:layout_toStartOf="@+id/chevron_right"
+                    android:layout_alignParentTop="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#FF000000"/>
+
+                <ImageView
+                    android:id="@+id/chevron_right"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/arrow_icon"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:id="@+id/transaction_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[Mr. Nirav Lad]"
+                    android:layout_below="@id/transaction_date"
+                    android:layout_toEndOf="@id/icon_transaction"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+            </RelativeLayout>
+            <!-- Sample Transaction Entry -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_background"
+                android:elevation="2dp"
+                android:padding="16dp"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/icon_transaction"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/delete"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"/>
+
+                <TextView
+                    android:id="@+id/transaction_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="16/9/2024"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_toEndOf="@id/icon_transaction"
+                    android:layout_alignParentTop="true"
+                    tools:ignore="DuplicateIds" />
+
+                <TextView
+                    android:id="@+id/transaction_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs.18,500"
+                    android:layout_toStartOf="@+id/chevron_right"
+                    android:layout_alignParentTop="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#FF000000"
+                    tools:ignore="DuplicateIds" />
+
+                <ImageView
+                    android:id="@+id/chevron_right"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/arrow_icon"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:id="@+id/transaction_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[Mr. Nirav Lad]"
+                    android:layout_below="@id/transaction_date"
+                    android:layout_toEndOf="@id/icon_transaction"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_background"
+                android:elevation="2dp"
+                android:padding="16dp"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/icon_transaction"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/delete"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"/>
+
+                <TextView
+                    android:id="@+id/transaction_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="16/9/2024"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_toEndOf="@id/icon_transaction"
+                    android:layout_alignParentTop="true"
+                    tools:ignore="DuplicateIds" />
+
+                <TextView
+                    android:id="@+id/transaction_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs.18,500"
+                    android:layout_toStartOf="@+id/chevron_right"
+                    android:layout_alignParentTop="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#FF000000"
+                    tools:ignore="DuplicateIds" />
+
+                <ImageView
+                    android:id="@+id/chevron_right"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/arrow_icon"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:id="@+id/transaction_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[Mr. Nirav Lad]"
+                    android:layout_below="@id/transaction_date"
+                    android:layout_toEndOf="@id/icon_transaction"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_background"
+                android:elevation="2dp"
+                android:padding="16dp"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/icon_transaction"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/delete"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"/>
+
+                <TextView
+                    android:id="@+id/transaction_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="16/9/2024"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_toEndOf="@id/icon_transaction"
+                    android:layout_alignParentTop="true"
+                    tools:ignore="DuplicateIds" />
+
+                <TextView
+                    android:id="@+id/transaction_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs.18,500"
+                    android:layout_toStartOf="@+id/chevron_right"
+                    android:layout_alignParentTop="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#FF000000"
+                    tools:ignore="DuplicateIds" />
+
+                <ImageView
+                    android:id="@+id/chevron_right"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/arrow_icon"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:id="@+id/transaction_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[Mr. Nirav Lad]"
+                    android:layout_below="@id/transaction_date"
+                    android:layout_toEndOf="@id/icon_transaction"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+            </RelativeLayout>
+
+
+
+            <Button
+                android:id="@+id/add_transaction_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ADD Transaction"
+                android:textColor="@android:color/white"
+                android:drawablePadding="8dp"
+                android:padding="16dp"
+                android:layout_alignParentBottom="true"/>
+            <!-- Sample Transaction Entry and others as needed -->
+            <!-- Existing transaction layout goes here -->
+
+        </LinearLayout>
+    </ScrollView>
+    <Button
+        android:id="@+id/add_transaction_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/add_transaction_button"
+        android:text="ADD Transaction"
+        android:textColor="@android:color/white"
+        android:drawablePadding="8dp"
+        android:padding="16dp"
+        android:layout_alignParentBottom="true"
+        tools:ignore="DuplicateIds" />
+
+    <!-- Add Transaction Button at the bottom -->
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-4dp"
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/bottom_navigation_menu" />
+</RelativeLayout>

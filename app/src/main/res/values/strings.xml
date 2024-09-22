@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">ClientLedgerPro</string>
+    <string name="app_name">Transaction</string>
+    <string name="ic_account_circle">Profile Icon</string>
+    <string name="logout">Settings Icon</string>
 </resources>
