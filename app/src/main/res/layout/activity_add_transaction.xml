@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"> <!-- For blurred effect -->
+
+    <!-- Pop-up Background Blur -->
+    <View
+        android:id="@+id/blurView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"/> <!-- Semi-transparent black for blur effect -->
+
+    <!-- Pop-up Form Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/formPopupCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="24dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Form Title -->
+            <TextView
+                android:id="@+id/formTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transaction Details"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_gravity="center_horizontal"
+                android:paddingBottom="16dp"/>
+
+            <!-- Client Name Field -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Client Name"
+                android:textSize="16sp"
+                android:paddingBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/clientNameField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Client Name"
+                android:inputType="text"/>
+
+            <!-- Project Name Field -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Project Name"
+                android:textSize="16sp"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/projectNameField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Project Name"
+                android:inputType="text"/>
+
+            <!-- Payment Type Field -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Payment Type"
+                android:textSize="16sp"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp"/>
+
+            <Spinner
+                android:id="@+id/paymentTypeSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/payment_type_array"/>
+
+            <!-- Amount Field -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amount (Rs.)"
+                android:textSize="16sp"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/amountField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Amount"
+                android:inputType="number"/>
+
+            <!-- Horizontal LinearLayout for Add & Cancel Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="24dp"
+                android:gravity="center">
+
+                <!-- Add Button -->
+                <Button
+                    android:id="@+id/addButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Add"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="@color/green"/>
+
+                <!-- Spacer -->
+                <Space
+                    android:layout_width="16dp"
+                    android:layout_height="wrap_content"/>
+
+                <!-- Cancel Button -->
+                <Button
+                    android:id="@+id/canButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cancel"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="@android:color/holo_red_dark"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
