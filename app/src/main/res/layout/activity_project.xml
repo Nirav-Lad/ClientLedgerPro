@@ -5,7 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white"
+    android:layout_marginTop="15dp"
+    android:layout_marginBottom="15dp">
 
     <!-- Header Container -->
     <RelativeLayout
@@ -85,6 +88,7 @@
     </RelativeLayout>
 
     <!-- ScrollView for the transaction list -->
+
     <ScrollView
         android:id="@+id/scroll_project"
         android:layout_width="match_parent"
@@ -138,16 +142,6 @@
                     android:layout_toEndOf="@id/icon_transaction"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
 
-<!--                <TextView-->
-<!--                    android:id="@+id/transaction_amount"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Rs.18,500"-->
-<!--                    android:layout_toStartOf="@+id/chevron_right"-->
-<!--                    android:layout_alignParentTop="true"-->
-<!--                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
-<!--                    android:textColor="#FF000000"/>-->
-
                 <ImageView
                     android:id="@+id/chevron_right"
                     android:layout_width="24dp"
@@ -156,38 +150,85 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"/>
 
-
             </RelativeLayout>
 
-
-
-
             <Button
-                android:id="@+id/add_project_button"
+                android:id="@+id/addproject"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="ADD PROJECT"
                 android:textColor="@android:color/white"
                 android:drawablePadding="8dp"
                 android:padding="16dp"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="@color/cyan"
                 android:layout_alignParentBottom="true"/>
-            <!-- Sample Transaction Entry and others as needed -->
-            <!-- Existing transaction layout goes here -->
+
+            <!-- Existing transaction entries go here -->
 
         </LinearLayout>
     </ScrollView>
 
+    <!-- Add Project Button -->
 
-    <!-- Add Transaction Button at the bottom -->
-
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+    <Button
+        android:id="@+id/add_project_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="-4dp"
-        android:background="?android:attr/windowBackground"
-        app:menu="@menu/bottom_navigation_menu" />
+        android:backgroundTint="@color/black"
+        android:drawablePadding="8dp"
+        android:padding="16dp"
+        android:text="ADD PROJECT"
+        android:textColor="@android:color/white" />
+
+    <!-- Bottom Navigation Buttons -->
+
+    <LinearLayout
+        android:id="@+id/bottom_navigation_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <!-- Projects Button -->
+        <Button
+            android:id="@+id/button_projects"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/color_1"
+            android:padding="12dp"
+            android:text="Project"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <!-- Clients Button -->
+        <Button
+            android:id="@+id/button_clients"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/color_1"
+            android:padding="12dp"
+            android:text="Client"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <!-- Transactions Button -->
+        <Button
+            android:id="@+id/button_transactions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/color_1"
+            android:padding="12dp"
+            android:text="Transaction"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+    </LinearLayout>
+
 </RelativeLayout>

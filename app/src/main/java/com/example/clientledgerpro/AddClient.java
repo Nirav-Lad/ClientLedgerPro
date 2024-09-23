@@ -14,6 +14,7 @@ public class AddClient extends AppCompatActivity {
 
     private Button addClient;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
