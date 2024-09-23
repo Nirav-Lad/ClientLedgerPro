@@ -90,12 +90,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/total_dues_container"
-        android:layout_above="@+id/add_project_button"
+        android:layout_above="@+id/add_client_button"
         android:layout_marginTop="8dp"
         tools:ignore="NotSibling">
 
         <LinearLayout
-            android:id="@+id/projects_container"
+            android:id="@+id/client_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -120,10 +120,10 @@
                     android:layout_marginEnd="16dp"/>
 
                 <TextView
-                    android:id="@+id/project_name"
+                    android:id="@+id/client_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hyatt Palace"
+                    android:text="Mr. Nirav Lad "
                     android:textStyle="bold"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:layout_toEndOf="@id/icon_transaction"
@@ -133,8 +133,8 @@
                     android:id="@+id/transaction_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="[Mr. Nirav Lad]"
-                    android:layout_below="@id/project_name"
+                    android:text="+91 56896 65336"
+                    android:layout_below="@id/client_name"
                     android:layout_toEndOf="@id/icon_transaction"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
 
@@ -158,19 +158,130 @@
 
 
             </RelativeLayout>
+            <!-- Sample Transaction Entry -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_background"
+                android:elevation="2dp"
+                android:padding="16dp"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/icon_transaction"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/delete"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"/>
+
+                <TextView
+                    android:id="@+id/client_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mr. Nirav Lad "
+                    android:textStyle="bold"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_toEndOf="@id/icon_transaction"
+                    android:layout_alignParentTop="true"/>
+
+                <TextView
+                    android:id="@+id/transaction_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+91 56896 65336"
+                    android:layout_below="@id/client_name"
+                    android:layout_toEndOf="@id/icon_transaction"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+
+                <!--                <TextView-->
+                <!--                    android:id="@+id/transaction_amount"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:text="Rs.18,500"-->
+                <!--                    android:layout_toStartOf="@+id/chevron_right"-->
+                <!--                    android:layout_alignParentTop="true"-->
+                <!--                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+                <!--                    android:textColor="#FF000000"/>-->
+
+                <ImageView
+                    android:id="@+id/chevron_right"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/arrow_icon"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"/>
 
 
+            </RelativeLayout>
+            <!-- Sample Transaction Entry -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_background"
+                android:elevation="2dp"
+                android:padding="16dp"
+                android:layout_marginBottom="8dp">
 
+                <ImageView
+                    android:id="@+id/icon_transaction"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/delete"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"/>
+
+                <TextView
+                    android:id="@+id/client_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mr. Nirav Lad "
+                    android:textStyle="bold"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_toEndOf="@id/icon_transaction"
+                    android:layout_alignParentTop="true"/>
+
+                <TextView
+                    android:id="@+id/transaction_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+91 56896 65336"
+                    android:layout_below="@id/client_name"
+                    android:layout_toEndOf="@id/icon_transaction"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+
+                <!--                <TextView-->
+                <!--                    android:id="@+id/transaction_amount"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:text="Rs.18,500"-->
+                <!--                    android:layout_toStartOf="@+id/chevron_right"-->
+                <!--                    android:layout_alignParentTop="true"-->
+                <!--                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+                <!--                    android:textColor="#FF000000"/>-->
+
+                <ImageView
+                    android:id="@+id/chevron_right"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/arrow_icon"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"/>
+
+
+            </RelativeLayout>
 
             <Button
                 android:id="@+id/add_project_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ADD PROJECT"
+                android:text="ADD CLIENT"
+                android:backgroundTint="@color/black"
                 android:textColor="@android:color/white"
                 android:drawablePadding="8dp"
                 android:padding="16dp"
-                android:backgroundTint="@color/black"
                 android:layout_alignParentBottom="true"/>
             <!-- Sample Transaction Entry and others as needed -->
             <!-- Existing transaction layout goes here -->

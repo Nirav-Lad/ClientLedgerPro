@@ -124,6 +124,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="16/9/2024"
+                    android:textStyle="bold"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:layout_toEndOf="@id/icon_transaction"
                     android:layout_alignParentTop="true"/>
@@ -133,6 +134,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rs.18,500"
+                    android:layout_marginEnd="15dp"
+                    android:textStyle="bold"
                     android:layout_toStartOf="@+id/chevron_right"
                     android:layout_alignParentTop="true"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -178,6 +181,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="16/9/2024"
+                    android:textStyle="bold"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:layout_toEndOf="@id/icon_transaction"
                     android:layout_alignParentTop="true"/>
@@ -187,6 +191,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rs.18,500"
+                    android:layout_marginEnd="15dp"
+                    android:textStyle="bold"
                     android:layout_toStartOf="@+id/chevron_right"
                     android:layout_alignParentTop="true"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -232,21 +238,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="16/9/2024"
+                    android:textStyle="bold"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:layout_toEndOf="@id/icon_transaction"
-                    android:layout_alignParentTop="true"
-                    tools:ignore="DuplicateIds" />
+                    android:layout_alignParentTop="true"/>
 
                 <TextView
                     android:id="@+id/transaction_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rs.18,500"
+                    android:layout_marginEnd="15dp"
+                    android:textStyle="bold"
                     android:layout_toStartOf="@+id/chevron_right"
                     android:layout_alignParentTop="true"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#FF000000"
-                    tools:ignore="DuplicateIds" />
+                    android:textColor="#FF000000"/>
 
                 <ImageView
                     android:id="@+id/chevron_right"
@@ -265,117 +272,6 @@
                     android:layout_toEndOf="@id/icon_transaction"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
             </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rounded_background"
-                android:elevation="2dp"
-                android:padding="16dp"
-                android:layout_marginBottom="8dp">
-
-                <ImageView
-                    android:id="@+id/icon_transaction"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/delete"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"/>
-
-                <TextView
-                    android:id="@+id/transaction_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="16/9/2024"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:layout_toEndOf="@id/icon_transaction"
-                    android:layout_alignParentTop="true"
-                    tools:ignore="DuplicateIds" />
-
-                <TextView
-                    android:id="@+id/transaction_amount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rs.18,500"
-                    android:layout_toStartOf="@+id/chevron_right"
-                    android:layout_alignParentTop="true"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#FF000000"
-                    tools:ignore="DuplicateIds" />
-
-                <ImageView
-                    android:id="@+id/chevron_right"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/arrow_icon"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"/>
-
-                <TextView
-                    android:id="@+id/transaction_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="[Mr. Nirav Lad]"
-                    android:layout_below="@id/transaction_date"
-                    android:layout_toEndOf="@id/icon_transaction"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rounded_background"
-                android:elevation="2dp"
-                android:padding="16dp"
-                android:layout_marginBottom="8dp">
-
-                <ImageView
-                    android:id="@+id/icon_transaction"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/delete"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"/>
-
-                <TextView
-                    android:id="@+id/transaction_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="16/9/2024"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:layout_toEndOf="@id/icon_transaction"
-                    android:layout_alignParentTop="true"
-                    tools:ignore="DuplicateIds" />
-
-                <TextView
-                    android:id="@+id/transaction_amount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rs.18,500"
-                    android:layout_toStartOf="@+id/chevron_right"
-                    android:layout_alignParentTop="true"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#FF000000"
-                    tools:ignore="DuplicateIds" />
-
-                <ImageView
-                    android:id="@+id/chevron_right"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/arrow_icon"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"/>
-
-                <TextView
-                    android:id="@+id/transaction_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="[Mr. Nirav Lad]"
-                    android:layout_below="@id/transaction_date"
-                    android:layout_toEndOf="@id/icon_transaction"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
-            </RelativeLayout>
-
 
 
             <Button
@@ -384,6 +280,7 @@
                 android:layout_height="wrap_content"
                 android:text="ADD Transaction"
                 android:textColor="@android:color/white"
+                android:backgroundTint="@color/black"
                 android:drawablePadding="8dp"
                 android:padding="16dp"
                 android:layout_alignParentBottom="true"/>
@@ -392,17 +289,7 @@
 
         </LinearLayout>
     </ScrollView>
-    <Button
-        android:id="@+id/add_transaction_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/add_transaction_button"
-        android:text="ADD Transaction"
-        android:textColor="@android:color/white"
-        android:drawablePadding="8dp"
-        android:padding="16dp"
-        android:layout_alignParentBottom="true"
-        tools:ignore="DuplicateIds" />
+
 
     <!-- Add Transaction Button at the bottom -->
 
