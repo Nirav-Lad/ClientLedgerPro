@@ -2,4 +2,12 @@
     <string name="app_name">Transaction</string>
     <string name="ic_account_circle">Profile Icon</string>
     <string name="logout">Settings Icon</string>
+    <string-array name="payment_type_array">
+        <item>Cash</item>
+        <item>Credit Card</item>
+        <item>Debit Card</item>
+        <item>Net Banking</item>
+        <item>UPI</item>
+        <item>Cheque</item>
+    </string-array>
 </resources>
