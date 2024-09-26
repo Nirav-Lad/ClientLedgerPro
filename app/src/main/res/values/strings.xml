@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Transaction</string>
+    <string name="app_name">Client Ledger Pro</string>
     <string name="ic_account_circle">Profile Icon</string>
     <string name="logout">Settings Icon</string>
     <string-array name="payment_type_array">

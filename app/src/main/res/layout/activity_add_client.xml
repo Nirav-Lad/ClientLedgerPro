@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"> <!-- For blurred effect -->
+    android:background="@color/white"> <!-- For blurred effect -->
 
     <!-- Pop-up Background Blur -->
     <View
@@ -115,7 +115,7 @@
                 android:text="Submit"
                 android:layout_marginTop="24dp"
                 android:textColor="@android:color/white"
-                android:backgroundTint="@color/green"/>
+                android:backgroundTint="@color/cyan"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
