@@ -7,4 +7,8 @@
     <color name="color_2">#333333</color>
     <color name="green">#05AB0B</color>
     <color name="cyan">#0097A7</color>
+    <color name="client_back">#caf0f8</color>
+    <color name="project_back">#d8f3dc</color>
+    <color name="text_color">#023e8a</color>
+
 </resources>

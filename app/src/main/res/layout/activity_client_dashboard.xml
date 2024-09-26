@@ -109,7 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="35dp"
             android:layout_marginTop="30dp"
-            android:background="@drawable/rounded_corner_color2"
+            android:background="@color/client_back"
             android:gravity="start"
             android:weightSum="6">
 
@@ -127,7 +127,7 @@
                 android:text="Clients"
                 android:textSize="23dp"
                 android:textStyle="bold"
-                android:textColor="@color/black"/>
+                android:textColor="@color/text_color"/>
 
             <Space
                 android:layout_width="wrap_content"
@@ -147,7 +147,7 @@
                 android:text="35"
                 android:textSize="25dp"
                 android:textStyle="bold"
-                android:textColor="@color/black"/>
+                android:textColor="@color/text_color"/>
 
         </LinearLayout>
 
@@ -156,7 +156,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="35dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/rounded_corner_color2"
+            android:background="@color/project_back"
             android:gravity="start"
             android:weightSum="6">
 
@@ -175,7 +175,7 @@
                 android:text="Projects"
                 android:textSize="23dp"
                 android:textStyle="bold"
-                android:textColor="@color/black"/>
+                android:textColor="@color/text_color"/>
 
             <Space
                 android:layout_width="wrap_content"
@@ -195,7 +195,7 @@
                 android:text="78"
                 android:textSize="25dp"
                 android:textStyle="bold"
-                android:textColor="@color/black"/>
+                android:textColor="@color/text_color"/>
 
         </LinearLayout>
 
