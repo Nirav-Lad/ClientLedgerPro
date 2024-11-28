@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_background"
+    android:elevation="2dp"
+    android:padding="16dp"
+    android:layout_marginBottom="8dp">
+
+    <!-- Transaction Icon -->
+    <ImageView
+        android:id="@+id/icon_transaction"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/delete"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Project Name Field -->
+    <TextView
+        android:id="@+id/projectNameField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hyatt Palace"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_toEndOf="@id/icon_transaction"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/black" />
+
+    <!-- Client/Transaction Name -->
+    <TextView
+        android:id="@+id/client_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="[Mr. Nirav Lad]"
+        android:layout_below="@id/projectNameField"
+        android:layout_toEndOf="@id/icon_transaction"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+    <!-- Chevron Icon -->
+    <ImageView
+        android:id="@+id/chevron_right"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/arrow_icon"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true" />
+
+</RelativeLayout>

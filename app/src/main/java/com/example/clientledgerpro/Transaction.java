@@ -44,6 +44,7 @@ public class Transaction extends AppCompatActivity {
             public void onClick(View view) {
                 Intent project=new Intent(Transaction.this, activity_project.class);
                 startActivity(project);
+                finish();
             }
         });
 
@@ -52,6 +53,7 @@ public class Transaction extends AppCompatActivity {
             public void onClick(View view) {
                 Intent client=new Intent(Transaction.this, activity_client.class);
                 startActivity(client);
+                finish();
             }
         });
 
@@ -60,6 +62,7 @@ public class Transaction extends AppCompatActivity {
             public void onClick(View view) {
 //                Intent transaction=new Intent(Transaction.this, Transaction.class);
 //                startActivity(transaction);
+//                finish();
             }
         });
     }

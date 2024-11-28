@@ -107,52 +107,52 @@
             android:padding="8dp">
 
             <!-- Sample Transaction Entry -->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rounded_background"
-                android:elevation="2dp"
-                android:padding="16dp"
-                android:layout_marginBottom="8dp">
+<!--            <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/rounded_background"-->
+<!--            android:elevation="2dp"-->
+<!--            android:padding="16dp"-->
+<!--            android:layout_marginBottom="8dp">-->
 
-                <ImageView
-                    android:id="@+id/icon_transaction"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/delete"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"/>
+<!--            <ImageView-->
+<!--                android:id="@+id/icon_transaction"-->
+<!--                android:layout_width="24dp"-->
+<!--                android:layout_height="24dp"-->
+<!--                android:src="@drawable/delete"-->
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_marginEnd="16dp"/>-->
 
-                <TextView
-                    android:id="@+id/project_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hyatt Palace"
-                    android:textStyle="bold"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:layout_toEndOf="@id/icon_transaction"
-                    android:layout_alignParentTop="true"
-                    android:textColor="@color/black"/>
+<!--            <TextView-->
+<!--                android:id="@+id/projectNameField"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Hyatt Palace"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+<!--                android:layout_toEndOf="@id/icon_transaction"-->
+<!--                android:layout_alignParentTop="true"-->
+<!--                android:textColor="@color/black"/>-->
 
-                <TextView
-                    android:id="@+id/transaction_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="[Mr. Nirav Lad]"
-                    android:layout_below="@id/project_name"
-                    android:layout_toEndOf="@id/icon_transaction"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+<!--            <TextView-->
+<!--                android:id="@+id/transaction_name"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="[Mr. Nirav Lad]"-->
+<!--                android:layout_below="@id/projectNameField"-->
+<!--                android:layout_toEndOf="@id/icon_transaction"-->
+<!--                    android:textAppearance="@style/TextAppearance.AppCompat.Small"/>-->
 
-                <ImageView
-                    android:id="@+id/chevron_right"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/arrow_icon"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"/>
+<!--                <ImageView-->
+<!--                    android:id="@+id/chevron_right"-->
+<!--                    android:layout_width="24dp"-->
+<!--                    android:layout_height="24dp"-->
+<!--                    android:src="@drawable/arrow_icon"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_centerVertical="true"/>-->
 
-            </RelativeLayout>
+<!--            </RelativeLayout>-->
 
             <Button
                 android:id="@+id/addproject"

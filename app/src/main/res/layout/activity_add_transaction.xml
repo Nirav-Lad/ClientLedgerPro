@@ -45,19 +45,6 @@
                 android:paddingBottom="16dp"/>
 
             <!-- Client Name Field -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Client Name"
-                android:textSize="16sp"
-                android:paddingBottom="8dp"/>
-
-            <EditText
-                android:id="@+id/clientNameField"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter Client Name"
-                android:inputType="text"/>
 
             <!-- Project Name Field -->
             <TextView
@@ -68,12 +55,18 @@
                 android:paddingTop="16dp"
                 android:paddingBottom="8dp"/>
 
-            <EditText
-                android:id="@+id/projectNameField"
+<!--            <EditText-->
+<!--                android:id="@+id/projectNameField"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Enter Project Name"-->
+<!--                android:inputType="text"/>-->
+            <Spinner
+                android:id="@+id/ProjectNameSpinner"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter Project Name"
-                android:inputType="text"/>
+                android:layout_height="39dp"
+                android:hint="Select Project Name"
+                android:spinnerMode="dropdown" />
 
             <!-- Payment Type Field -->
             <TextView
@@ -87,8 +80,8 @@
             <Spinner
                 android:id="@+id/paymentTypeSpinner"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:entries="@array/payment_type_array"/>
+                android:layout_height="38dp"
+                android:entries="@array/payment_type_array" />
 
             <!-- Amount Field -->
             <TextView

@@ -63,17 +63,17 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Project Name"
-                android:textSize="16sp"
                 android:paddingTop="16dp"
-                android:paddingBottom="8dp"/>
+                android:paddingBottom="8dp"
+                android:text="Address:"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/projectNameField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter Project Name"
-                android:inputType="text"/>
+                android:hint="Enter Address"
+                android:inputType="text" />
 
             <!-- Phone Number Field -->
             <TextView
@@ -92,20 +92,6 @@
                 android:inputType="phone"/>
 
             <!-- Quotation Amount Field -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Quotation Amount (Rs.)"
-                android:textSize="16sp"
-                android:paddingTop="16dp"
-                android:paddingBottom="8dp"/>
-
-            <EditText
-                android:id="@+id/quotationAmountField"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter Quotation Amount"
-                android:inputType="number"/>
 
             <!-- Submit Button -->
             <Button

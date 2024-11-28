@@ -103,180 +103,182 @@
             android:orientation="vertical"
             android:padding="8dp">
 
+
+
             <!-- Sample Transaction Entry -->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rounded_background"
-                android:elevation="2dp"
-                android:padding="16dp"
-                android:layout_marginBottom="8dp">
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/rounded_background"-->
+<!--                android:elevation="2dp"-->
+<!--                android:padding="16dp"-->
+<!--                android:layout_marginBottom="8dp">-->
 
-                <ImageView
-                    android:id="@+id/icon_transaction"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/delete"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"/>
-
-                <TextView
-                    android:id="@+id/client_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mr. Nirav Lad "
-                    android:textStyle="bold"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:layout_toEndOf="@id/icon_transaction"
-                    android:layout_alignParentTop="true"
-                    android:textColor="@color/black"/>
-
-                <TextView
-                    android:id="@+id/transaction_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="+91 56896 65336"
-                    android:layout_below="@id/client_name"
-                    android:layout_toEndOf="@id/icon_transaction"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+<!--                <ImageView-->
+<!--                    android:id="@+id/icon_transaction"-->
+<!--                    android:layout_width="24dp"-->
+<!--                    android:layout_height="24dp"-->
+<!--                    android:src="@drawable/delete"-->
+<!--                    android:layout_alignParentStart="true"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:layout_marginEnd="16dp"/>-->
 
 <!--                <TextView-->
-<!--                    android:id="@+id/transaction_amount"-->
+<!--                    android:id="@+id/client_name"-->
 <!--                    android:layout_width="wrap_content"-->
 <!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Rs.18,500"-->
-<!--                    android:layout_toStartOf="@+id/chevron_right"-->
-<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:text="Mr. Nirav Lad "-->
+<!--                    android:textStyle="bold"-->
 <!--                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
-<!--                    android:textColor="#FF000000"/>-->
+<!--                    android:layout_toEndOf="@id/icon_transaction"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:textColor="@color/black"/>-->
 
-                <ImageView
-                    android:id="@+id/chevron_right"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/arrow_icon"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"/>
+<!--                <TextView-->
+<!--                    android:id="@+id/transaction_name"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="+91 56896 65336"-->
+<!--                    android:layout_below="@id/client_name"-->
+<!--                    android:layout_toEndOf="@id/icon_transaction"-->
+<!--                    android:textAppearance="@style/TextAppearance.AppCompat.Small"/>-->
 
+<!--&lt;!&ndash;                <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:id="@+id/transaction_amount"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:text="Rs.18,500"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_toStartOf="@+id/chevron_right"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_alignParentTop="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:textColor="#FF000000"/>&ndash;&gt;-->
 
-            </RelativeLayout>
-            <!-- Sample Transaction Entry -->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rounded_background"
-                android:elevation="2dp"
-                android:padding="16dp"
-                android:layout_marginBottom="8dp">
-
-                <ImageView
-                    android:id="@+id/icon_transaction"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/delete"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"/>
-
-                <TextView
-                    android:id="@+id/client_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mr. Nirav Lad "
-                    android:textStyle="bold"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:layout_toEndOf="@id/icon_transaction"
-                    android:layout_alignParentTop="true"
-                    android:textColor="@color/black"/>
-
-                <TextView
-                    android:id="@+id/transaction_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="+91 56896 65336"
-                    android:layout_below="@id/client_name"
-                    android:layout_toEndOf="@id/icon_transaction"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
-
-                <!--                <TextView-->
-                <!--                    android:id="@+id/transaction_amount"-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:text="Rs.18,500"-->
-                <!--                    android:layout_toStartOf="@+id/chevron_right"-->
-                <!--                    android:layout_alignParentTop="true"-->
-                <!--                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
-                <!--                    android:textColor="#FF000000"/>-->
-
-                <ImageView
-                    android:id="@+id/chevron_right"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/arrow_icon"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"/>
+<!--                <ImageView-->
+<!--                    android:id="@+id/chevron_right"-->
+<!--                    android:layout_width="24dp"-->
+<!--                    android:layout_height="24dp"-->
+<!--                    android:src="@drawable/arrow_icon"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_centerVertical="true"/>-->
 
 
-            </RelativeLayout>
-            <!-- Sample Transaction Entry -->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rounded_background"
-                android:elevation="2dp"
-                android:padding="16dp"
-                android:layout_marginBottom="8dp">
+<!--            </RelativeLayout>-->
+<!--            &lt;!&ndash; Sample Transaction Entry &ndash;&gt;-->
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/rounded_background"-->
+<!--                android:elevation="2dp"-->
+<!--                android:padding="16dp"-->
+<!--                android:layout_marginBottom="8dp">-->
 
-                <ImageView
-                    android:id="@+id/icon_transaction"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/delete"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"/>
+<!--                <ImageView-->
+<!--                    android:id="@+id/icon_transaction"-->
+<!--                    android:layout_width="24dp"-->
+<!--                    android:layout_height="24dp"-->
+<!--                    android:src="@drawable/delete"-->
+<!--                    android:layout_alignParentStart="true"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:layout_marginEnd="16dp"/>-->
 
-                <TextView
-                    android:id="@+id/client_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mr. Nirav Lad "
-                    android:textStyle="bold"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:layout_toEndOf="@id/icon_transaction"
-                    android:layout_alignParentTop="true"
-                    android:textColor="@color/black"/>
+<!--                <TextView-->
+<!--                    android:id="@+id/client_name"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Mr. Nirav Lad "-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+<!--                    android:layout_toEndOf="@id/icon_transaction"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:textColor="@color/black"/>-->
 
-                <TextView
-                    android:id="@+id/transaction_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="+91 56896 65336"
-                    android:layout_below="@id/client_name"
-                    android:layout_toEndOf="@id/icon_transaction"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+<!--                <TextView-->
+<!--                    android:id="@+id/transaction_name"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="+91 56896 65336"-->
+<!--                    android:layout_below="@id/client_name"-->
+<!--                    android:layout_toEndOf="@id/icon_transaction"-->
+<!--                    android:textAppearance="@style/TextAppearance.AppCompat.Small"/>-->
 
-                <!--                <TextView-->
-                <!--                    android:id="@+id/transaction_amount"-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:text="Rs.18,500"-->
-                <!--                    android:layout_toStartOf="@+id/chevron_right"-->
-                <!--                    android:layout_alignParentTop="true"-->
-                <!--                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
-                <!--                    android:textColor="#FF000000"/>-->
+<!--                &lt;!&ndash;                <TextView&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:id="@+id/transaction_amount"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:layout_width="wrap_content"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:text="Rs.18,500"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:layout_toStartOf="@+id/chevron_right"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:layout_alignParentTop="true"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:textColor="#FF000000"/>&ndash;&gt;-->
 
-                <ImageView
-                    android:id="@+id/chevron_right"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/arrow_icon"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"/>
+<!--                <ImageView-->
+<!--                    android:id="@+id/chevron_right"-->
+<!--                    android:layout_width="24dp"-->
+<!--                    android:layout_height="24dp"-->
+<!--                    android:src="@drawable/arrow_icon"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_centerVertical="true"/>-->
 
 
-            </RelativeLayout>
+<!--            </RelativeLayout>-->
+<!--            &lt;!&ndash; Sample Transaction Entry &ndash;&gt;-->
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/rounded_background"-->
+<!--                android:elevation="2dp"-->
+<!--                android:padding="16dp"-->
+<!--                android:layout_marginBottom="8dp">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/icon_transaction"-->
+<!--                    android:layout_width="24dp"-->
+<!--                    android:layout_height="24dp"-->
+<!--                    android:src="@drawable/delete"-->
+<!--                    android:layout_alignParentStart="true"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:layout_marginEnd="16dp"/>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/client_name"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Mr. Nirav Lad "-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+<!--                    android:layout_toEndOf="@id/icon_transaction"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:textColor="@color/black"/>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/transaction_name"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="+91 56896 65336"-->
+<!--                    android:layout_below="@id/client_name"-->
+<!--                    android:layout_toEndOf="@id/icon_transaction"-->
+<!--                    android:textAppearance="@style/TextAppearance.AppCompat.Small"/>-->
+
+<!--                &lt;!&ndash;                <TextView&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:id="@+id/transaction_amount"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:layout_width="wrap_content"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:text="Rs.18,500"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:layout_toStartOf="@+id/chevron_right"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:layout_alignParentTop="true"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:textColor="#FF000000"/>&ndash;&gt;-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/chevron_right"-->
+<!--                    android:layout_width="24dp"-->
+<!--                    android:layout_height="24dp"-->
+<!--                    android:src="@drawable/arrow_icon"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_centerVertical="true"/>-->
+
+
+<!--            </RelativeLayout>-->
 
             <Button
                 android:id="@+id/add_client_button"

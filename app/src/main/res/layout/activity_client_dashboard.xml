@@ -109,7 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="35dp"
             android:layout_marginTop="30dp"
-            android:background="@color/client_back"
+            android:background="@color/cardview_dark_background"
             android:gravity="start"
             android:weightSum="6">
 
@@ -125,9 +125,9 @@
                 android:paddingHorizontal="40dp"
                 android:paddingVertical="10dp"
                 android:text="Clients"
+                android:textColor="@color/black"
                 android:textSize="23dp"
-                android:textStyle="bold"
-                android:textColor="@color/text_color"/>
+                android:textStyle="bold" />
 
             <Space
                 android:layout_width="wrap_content"
@@ -145,9 +145,9 @@
                 android:gravity="center"
                 android:padding="7dp"
                 android:text="35"
+                android:textColor="@color/black"
                 android:textSize="25dp"
-                android:textStyle="bold"
-                android:textColor="@color/text_color"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -156,7 +156,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="35dp"
             android:layout_marginTop="10dp"
-            android:background="@color/project_back"
+            android:background="@color/cardview_dark_background"
             android:gravity="start"
             android:weightSum="6">
 
@@ -173,9 +173,9 @@
                 android:paddingHorizontal="40dp"
                 android:paddingVertical="10dp"
                 android:text="Projects"
+                android:textColor="@color/black"
                 android:textSize="23dp"
-                android:textStyle="bold"
-                android:textColor="@color/text_color"/>
+                android:textStyle="bold" />
 
             <Space
                 android:layout_width="wrap_content"
@@ -193,9 +193,9 @@
                 android:gravity="center"
                 android:padding="7dp"
                 android:text="78"
+                android:textColor="@color/black"
                 android:textSize="25dp"
-                android:textStyle="bold"
-                android:textColor="@color/text_color"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
 

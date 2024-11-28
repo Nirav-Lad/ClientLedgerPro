@@ -52,12 +52,19 @@
                 android:textSize="16sp"
                 android:paddingBottom="8dp"/>
 
-            <EditText
-                android:id="@+id/clientNameField"
+<!--            <EditText-->
+<!--                android:id="@+id/clientNameField"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Enter Client Name"-->
+<!--                android:inputType="text"/>-->
+
+            <Spinner
+                android:id="@+id/spinnerClientSelect"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter Client Name"
-                android:inputType="text"/>
+                android:hint="Select the client name"
+                android:spinnerMode="dropdown"/>
 
             <!-- Project Name Field -->
             <TextView
