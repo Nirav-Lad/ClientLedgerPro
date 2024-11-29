@@ -42,6 +42,8 @@ public class AddTransaction extends AppCompatActivity {
     private Spinner projectNameSpinner;
     private EditText amountField;
     private Spinner paymentTypeSpinner;
+    float quotation_amount;
+    float advance_amount,transaction_amount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,22 +55,22 @@ public class AddTransaction extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
 
         db.collection("project_details").orderBy("project_name").get().addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        List<String> projectNames = new ArrayList<>();
-                        for (QueryDocumentSnapshot document : task.getResult()) {
-                            String projectName = document.getString("project_name");
-                            projectNames.add(projectName);
-                        }
-                        projectNameSpinner = findViewById(R.id.ProjectNameSpinner);
+            if (task.isSuccessful()) {
+                List<String> projectNames = new ArrayList<>();
+                for (QueryDocumentSnapshot document : task.getResult()) {
+                    String projectName = document.getString("project_name");
+                    projectNames.add(projectName);
+                }
+                projectNameSpinner = findViewById(R.id.ProjectNameSpinner);
 
-                        ArrayAdapter<String> adapter = new ArrayAdapter<>(AddTransaction.this, android.R.layout.simple_spinner_dropdown_item, projectNames);
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(AddTransaction.this, android.R.layout.simple_spinner_dropdown_item, projectNames);
 
-                        projectNameSpinner.setAdapter(adapter);
+                projectNameSpinner.setAdapter(adapter);
 
-                    } else {
-                        Log.d("Query Execution Project Fetch", "Error getting documents: ", task.getException());
-                    }
-                });
+            } else {
+                Log.d("Query Execution Project Fetch", "Error getting documents: ", task.getException());
+            }
+        });
 
         addbutton=findViewById(R.id.addButton);
         cancelbutton=findViewById(R.id.canButton);
@@ -76,44 +78,50 @@ public class AddTransaction extends AppCompatActivity {
         paymentTypeSpinner = findViewById(R.id.paymentTypeSpinner);
 
         addbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+                                         @Override
+                                         public void onClick(View view) {
 
-                String projectName = projectNameSpinner.getSelectedItem().toString();
-                String amount = amountField.getText().toString();
-                String paymentType = paymentTypeSpinner.getSelectedItem().toString();
+                                             String projectName = projectNameSpinner.getSelectedItem().toString();
+                                             String amount = amountField.getText().toString();
+                                             String paymentType = paymentTypeSpinner.getSelectedItem().toString();
 
-                Map<String, Object> transaction_data = new HashMap<>();
-                transaction_data.put("project_name", projectName);
-                transaction_data.put("amount", amount);
-                transaction_data.put("payment_type", paymentType);
-                transaction_data.put("created_at", FieldValue.serverTimestamp());
-
-                db.collection("transaction_details")
-                        .add(transaction_data)
-                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                            @Override
-                            public void onSuccess(DocumentReference documentReference) {
-                                System.out.println("Data added successfully");
-                                Toast.makeText(AddTransaction.this, "Data added successfully", Toast.LENGTH_SHORT).show();
-                                try {
-                                    Thread.sleep(1000);
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
-                                }
-                                finish();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(AddTransaction.this, "Something went wrong. Please try again", Toast.LENGTH_LONG).show();
-                            }
-                        });
+                                             if (projectName.isEmpty() || amount.isEmpty() || paymentType.isEmpty()) {
+                                                 Toast.makeText(AddTransaction.this, "Please fill all the fields", Toast.LENGTH_LONG).show();
+                                                 return;
+                                             }
 
 
-            }
-        });
+                                             Map<String, Object> transaction_data = new HashMap<>();
+                                             transaction_data.put("project_name", projectName);
+                                             transaction_data.put("amount", amount);
+                                             transaction_data.put("payment_type", paymentType);
+                                             transaction_data.put("created_at", FieldValue.serverTimestamp());
+
+                                             db.collection("transaction_details")
+                                                     .add(transaction_data)
+                                                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                                         @Override
+                                                         public void onSuccess(DocumentReference documentReference) {
+                                                             System.out.println("Data added successfully");
+                                                             Toast.makeText(AddTransaction.this, "Data added successfully", Toast.LENGTH_SHORT).show();
+                                                             try {
+                                                                 Thread.sleep(1000);
+                                                             } catch (InterruptedException e) {
+                                                                 e.printStackTrace();
+                                                             }
+                                                             finish();
+                                                         }
+                                                     })
+                                                     .addOnFailureListener(new OnFailureListener() {
+                                                         @Override
+                                                         public void onFailure(@NonNull Exception e) {
+                                                             Toast.makeText(AddTransaction.this, "Something went wrong. Please try again", Toast.LENGTH_LONG).show();
+                                                         }
+                                                     });
+                                         }
+                                     });
+
+
 
         cancelbutton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -23,12 +23,12 @@
         android:id="@+id/transaction_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="16/9/2024"
-        android:textStyle="bold"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:layout_toEndOf="@id/icon_transaction"
         android:layout_alignParentTop="true"
-        android:textColor="@color/black" />
+        android:layout_toEndOf="@id/icon_transaction"
+        android:text="16/9/2024"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
 
     <!-- Transaction Amount -->
     <TextView

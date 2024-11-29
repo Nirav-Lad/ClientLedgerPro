@@ -36,7 +36,6 @@ import java.util.Locale;
 public class Transaction extends AppCompatActivity {
 
     private Button addTransaction;
-    private Button canceltransac;
     private Button project;
     private Button client;
     private Button transaction;
@@ -63,7 +62,7 @@ public class Transaction extends AppCompatActivity {
 
         addTransaction=findViewById(R.id.add_transaction_button);
 
-        totalDues = findViewById(R.id.total_dues_amount);
+
 
         addTransaction.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +73,7 @@ public class Transaction extends AppCompatActivity {
             }
         });
 
+        totalDues = findViewById(R.id.total_dues_amount);
         project=findViewById(R.id.button_projects);
         client=findViewById(R.id.button_clients);
         transaction=findViewById(R.id.button_transactions);
@@ -129,18 +129,18 @@ public class Transaction extends AppCompatActivity {
 
                             }
                         }
-                            });
+                    });
 
 
                 }
-//                db.collection("project_details").get().addOnCompleteListener(task1 -> {
-//                    if(task1.isSuccessful()){
-//                        for(QueryDocumentSnapshot document1 : task1.getResult()){
-//                            String estimatedQuotation = document1.getString("estimated_quotation");
-//                            quotationSum += Float.parseFloat(estimatedQuotation);
-//                        }
-//                    }
-//                });
+                db.collection("project_details").get().addOnCompleteListener(task2 -> {
+                    if(task2.isSuccessful()){
+                        for(QueryDocumentSnapshot document1 : task2.getResult()){
+                            String estimatedQuotation = document1.getString("estimated_quotation");
+//                            quotationSum += Integer.parseInt(estimatedQuotation);
+                        }
+                    }
+                });
 //                String TotalDues = String.valueOf(quotationSum-transactionSum);
 //                totalDues.setText(TotalDues);
             } else {
@@ -195,7 +195,7 @@ public class Transaction extends AppCompatActivity {
         // Logic to delete the record from Firestore or wherever your data is stored
         Query query = db.collection("transaction_details")
                 .whereEqualTo("amount", amount)
-                        .whereEqualTo("project_name", project_name);
+                .whereEqualTo("project_name", project_name);
 
         query.get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {

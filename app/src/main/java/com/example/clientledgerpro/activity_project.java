@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -159,6 +160,21 @@ public class activity_project extends AppCompatActivity {
                                                 public void onComplete(Task<Void> task) {
                                                     if (task.isSuccessful()) {
                                                         // Successfully deleted the document
+                                                        Query query1 = db.collection("transaction_details").whereEqualTo("project_name", project_name);
+
+                                                        query1.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                                            @Override
+                                                            public void onComplete(@NonNull Task<QuerySnapshot> task1) {
+                                                                if(task1.isSuccessful()){
+                                                                    QuerySnapshot querySnapshot2 = task1.getResult();
+                                                                    for(QueryDocumentSnapshot document2 : querySnapshot2){
+                                                                        DocumentReference documentReference2 = db.collection("transaction_details").document(document2.getId());
+                                                                        documentReference2.delete();
+                                                                    }
+                                                                }
+                                                            }
+                                                        });
+
                                                         Log.d("Delete Document", "Document successfully deleted!");
                                                         Toast.makeText(activity_project.this, "Record Deleted", Toast.LENGTH_SHORT).show();
                                                     } else {
