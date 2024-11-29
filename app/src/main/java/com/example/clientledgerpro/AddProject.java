@@ -24,6 +24,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.Firebase;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -56,7 +57,7 @@ public class AddProject extends AppCompatActivity {
         advanceAmountText = findViewById(R.id.advanceAmountField);
 
 
-        db.collection("client_details").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        db.collection("client_details").orderBy("client_name").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
@@ -114,6 +115,7 @@ public class AddProject extends AppCompatActivity {
                 project_data.put("estimated_quotation", estimatedQuotation);
                 project_data.put("advance_amount", advanceAmount);
                 project_data.put("client_name", clientName);
+                project_data.put("created_at", FieldValue.serverTimestamp());
 
 
 

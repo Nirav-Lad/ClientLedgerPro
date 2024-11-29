@@ -51,7 +51,7 @@ public class activity_client extends AppCompatActivity {
         addClient=findViewById(R.id.add_client_button);
         parentLayout = findViewById(R.id.client_container);
 
-        db.collection("client_details").get().addOnCompleteListener(task -> {
+        db.collection("client_details").orderBy("client_name").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 for (QueryDocumentSnapshot document : task.getResult()) {
                     String clientName = document.getString("client_name");

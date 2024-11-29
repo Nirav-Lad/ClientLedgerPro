@@ -60,7 +60,7 @@ public class activity_project extends AppCompatActivity {
         addProject=findViewById(R.id.addproject);
         parentLayout = findViewById(R.id.projects_container);
 
-        db.collection("project_details").get().addOnCompleteListener(task -> {
+        db.collection("project_details").orderBy("project_name").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 for (QueryDocumentSnapshot document : task.getResult()) {
                     String projectName = document.getString("project_name");

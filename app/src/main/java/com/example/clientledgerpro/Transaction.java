@@ -22,11 +22,16 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class Transaction extends AppCompatActivity {
 
@@ -37,7 +42,10 @@ public class Transaction extends AppCompatActivity {
     private Button transaction;
     private FirebaseFirestore db;
     private LinearLayout parentLayout;
+    private TextView totalDues;
     private ImageView deleteIcon;
+    private Float quotationSum;
+    private Float transactionSum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,11 +62,15 @@ public class Transaction extends AppCompatActivity {
 
 
         addTransaction=findViewById(R.id.add_transaction_button);
+
+        totalDues = findViewById(R.id.total_dues_amount);
+
         addTransaction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent addtrans=new Intent(Transaction.this, AddTransaction.class);
                 startActivity(addtrans);
+                finish();
             }
         });
 
@@ -67,14 +79,23 @@ public class Transaction extends AppCompatActivity {
         transaction=findViewById(R.id.button_transactions);
         parentLayout = findViewById(R.id.transactions_container);
 
-        db.collection("transaction_details").get().addOnCompleteListener(task -> {
+        db.collection("transaction_details").orderBy("created_at", Query.Direction.DESCENDING).get().addOnCompleteListener(task -> {
 
             if (task.isSuccessful()) {
                 for (QueryDocumentSnapshot document : task.getResult()) {
                     String amount = document.getString("amount");
+
                     String projectName = document.getString("project_name");
-                    String date_time = document.getString("date");
-                    Log.d(TAG, "Date: " + date_time);;
+                    Timestamp date_time = document.getTimestamp("created_at");
+
+                    Date date =  date_time.toDate();
+                    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy ", Locale.getDefault());
+                    SimpleDateFormat stf = new SimpleDateFormat("HH:mm:ss", Locale.getDefault());
+                    String formattedDate = sdf.format(date);
+                    String formattedTime = sdf.format(date);
+
+                    Log.d("Date", "Date: " + formattedDate);;
+
 
                     db.collection("project_details").whereEqualTo("project_name", projectName).get().addOnCompleteListener(task1 -> {
                         if(task1.isSuccessful()){
@@ -92,9 +113,9 @@ public class Transaction extends AppCompatActivity {
                                 TextView clientNameTextView = itemView.findViewById(R.id.transaction_name);
                                 TextView transactionAmountTextView = itemView.findViewById(R.id.transaction_amount);
 
-                                transactionDateTextView.setText(date_time != null ? date_time : "Unknown detail");
+                                transactionDateTextView.setText(formattedDate != null ? formattedDate : "Unknown detail");
                                 clientNameTextView.setText(clientName != null ? clientName : "No Details Available");
-                                transactionAmountTextView.setText(amount);
+                                transactionAmountTextView.setText("₹"+amount);
 
                                 deleteIcon.setOnClickListener(new View.OnClickListener() {
                                     @Override
@@ -112,6 +133,16 @@ public class Transaction extends AppCompatActivity {
 
 
                 }
+//                db.collection("project_details").get().addOnCompleteListener(task1 -> {
+//                    if(task1.isSuccessful()){
+//                        for(QueryDocumentSnapshot document1 : task1.getResult()){
+//                            String estimatedQuotation = document1.getString("estimated_quotation");
+//                            quotationSum += Float.parseFloat(estimatedQuotation);
+//                        }
+//                    }
+//                });
+//                String TotalDues = String.valueOf(quotationSum-transactionSum);
+//                totalDues.setText(TotalDues);
             } else {
                 Log.e(TAG, "Error fetching Firestore data: ", task.getException());
             }
@@ -148,7 +179,7 @@ public class Transaction extends AppCompatActivity {
     private void showDeleteConfirmationDialog(String amount , String project_name) {
         new AlertDialog.Builder(this)
                 .setTitle("Delete Record")
-                .setMessage("Are you sure you want to delete "+ project_name +" Project?")
+                .setMessage("Are you sure you want to delete transaction with amount: "+ amount +" for Project "+project_name)
                 .setPositiveButton("Yes", (dialog, which) -> {
                     // Perform the deletion (e.g., delete from Firestore)
                     deleteRecord(amount, project_name);
@@ -162,7 +193,7 @@ public class Transaction extends AppCompatActivity {
 
     private void deleteRecord(String amount,String project_name) {
         // Logic to delete the record from Firestore or wherever your data is stored
-        Query query = db.collection("project_details")
+        Query query = db.collection("transaction_details")
                 .whereEqualTo("amount", amount)
                         .whereEqualTo("project_name", project_name);
 
