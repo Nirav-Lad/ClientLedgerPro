@@ -90,34 +90,63 @@ public class AddTransaction extends AppCompatActivity {
                                                  return;
                                              }
 
+                                             db.collection("project_details").whereEqualTo("project_name",projectName).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                                 @Override
+                                                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                                     if(task.isSuccessful()){
+                                                         for(QueryDocumentSnapshot document : task.getResult()){
+                                                             quotation_amount = Float.parseFloat(document.getString("estimated_quotation"));
+                                                             advance_amount = Float.parseFloat(document.getString("advance_amount"));
+                                                        }
+                                                         transaction_amount = 0;
+                                                         db.collection("transaction_details").whereEqualTo("project_name",projectName).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                                             @Override
+                                                             public void onComplete(@NonNull Task<QuerySnapshot> task1) {
+                                                                 if(task1.isSuccessful()){
+                                                                     for(QueryDocumentSnapshot document1 : task1.getResult()){
+                                                                          transaction_amount += Float.parseFloat(document1.getString("amount"));
+                                                                     }
+                                                                     transaction_amount += advance_amount;
+                                                                     if((transaction_amount+Float.parseFloat(amount))>=quotation_amount){
+                                                                         Toast.makeText(AddTransaction.this, "Transaction amount exceeds the quotation amount", Toast.LENGTH_LONG).show();
+                                                                     }else{
+                                                                         Map<String, Object> transaction_data = new HashMap<>();
+                                                                         transaction_data.put("project_name", projectName);
+                                                                         transaction_data.put("amount", amount);
+                                                                         transaction_data.put("payment_type", paymentType);
+                                                                         transaction_data.put("created_at", FieldValue.serverTimestamp());
 
-                                             Map<String, Object> transaction_data = new HashMap<>();
-                                             transaction_data.put("project_name", projectName);
-                                             transaction_data.put("amount", amount);
-                                             transaction_data.put("payment_type", paymentType);
-                                             transaction_data.put("created_at", FieldValue.serverTimestamp());
-
-                                             db.collection("transaction_details")
-                                                     .add(transaction_data)
-                                                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                                                         @Override
-                                                         public void onSuccess(DocumentReference documentReference) {
-                                                             System.out.println("Data added successfully");
-                                                             Toast.makeText(AddTransaction.this, "Data added successfully", Toast.LENGTH_SHORT).show();
-                                                             try {
-                                                                 Thread.sleep(1000);
-                                                             } catch (InterruptedException e) {
-                                                                 e.printStackTrace();
+                                                                         db.collection("transaction_details")
+                                                                                 .add(transaction_data)
+                                                                                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                                                                     @Override
+                                                                                     public void onSuccess(DocumentReference documentReference) {
+                                                                                         System.out.println("Data added successfully");
+                                                                                         Toast.makeText(AddTransaction.this, "Data added successfully", Toast.LENGTH_SHORT).show();
+                                                                                         try {
+                                                                                             Thread.sleep(1000);
+                                                                                         } catch (InterruptedException e) {
+                                                                                             e.printStackTrace();
+                                                                                         }
+                                                                                         finish();
+                                                                                     }
+                                                                                 })
+                                                                                 .addOnFailureListener(new OnFailureListener() {
+                                                                                     @Override
+                                                                                     public void onFailure(@NonNull Exception e) {
+                                                                                         Toast.makeText(AddTransaction.this, "Something went wrong. Please try again", Toast.LENGTH_LONG).show();
+                                                                                     }
+                                                                                 });
+                                                                     }
+                                                                 }
                                                              }
-                                                             finish();
-                                                         }
-                                                     })
-                                                     .addOnFailureListener(new OnFailureListener() {
-                                                         @Override
-                                                         public void onFailure(@NonNull Exception e) {
-                                                             Toast.makeText(AddTransaction.this, "Something went wrong. Please try again", Toast.LENGTH_LONG).show();
-                                                         }
-                                                     });
+                                                         });
+                                                    }
+                                                 }
+                                             });
+
+
+
                                          }
                                      });
 
