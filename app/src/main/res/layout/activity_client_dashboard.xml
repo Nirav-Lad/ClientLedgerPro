@@ -135,6 +135,7 @@
                 android:layout_weight="3" />
 
             <TextView
+                android:id="@+id/clientCountTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -144,7 +145,7 @@
                 android:fontFamily="monospace"
                 android:gravity="center"
                 android:padding="7dp"
-                android:text="35"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:textStyle="bold" />
@@ -183,6 +184,7 @@
                 android:layout_weight="3" />
 
             <TextView
+                android:id="@+id/projectCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -192,7 +194,7 @@
                 android:fontFamily="monospace"
                 android:gravity="center"
                 android:padding="7dp"
-                android:text="78"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:textStyle="bold" />
