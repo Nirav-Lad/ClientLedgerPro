@@ -48,6 +48,7 @@ public class AddProject extends AppCompatActivity {
 
         setContentView(R.layout.activity_add_project);
 
+
         db = FirebaseFirestore.getInstance();
         projectNameText = findViewById(R.id.projectNameField);
         siteAddressText = findViewById(R.id.siteAddressField);

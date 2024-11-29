@@ -46,6 +46,11 @@ public class Transaction extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         setContentView(R.layout.activity_transaction);
 
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
 
         addTransaction=findViewById(R.id.add_transaction_button);
