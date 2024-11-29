@@ -4,6 +4,7 @@ import static android.content.ContentValues.TAG;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -43,8 +44,9 @@ public class Transaction extends AppCompatActivity {
     private LinearLayout parentLayout;
     private TextView totalDues;
     private ImageView deleteIcon;
-    private Float quotationSum;
-    private Float transactionSum;
+    private float quotationSum;
+    private float transactionSum;
+    private float TotalDues;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +86,7 @@ public class Transaction extends AppCompatActivity {
             if (task.isSuccessful()) {
                 for (QueryDocumentSnapshot document : task.getResult()) {
                     String amount = document.getString("amount");
-
+                    transactionSum += Integer.parseInt(amount);
                     String projectName = document.getString("project_name");
                     Timestamp date_time = document.getTimestamp("created_at");
 
@@ -137,12 +139,23 @@ public class Transaction extends AppCompatActivity {
                     if(task2.isSuccessful()){
                         for(QueryDocumentSnapshot document1 : task2.getResult()){
                             String estimatedQuotation = document1.getString("estimated_quotation");
-//                            quotationSum += Integer.parseInt(estimatedQuotation);
+                            quotationSum += Integer.parseInt(estimatedQuotation);
+                            String aAmount = document1.getString("advance_amount");
+                            transactionSum += Integer.parseInt(aAmount);
                         }
+                        TotalDues = quotationSum - transactionSum;
+                        totalDues.setText("₹"+TotalDues);
+                        if(TotalDues<0){
+                            totalDues.setTextColor(Color.parseColor("#FF0000"));
+                        }else{
+                            totalDues.setTextColor(Color.parseColor("#00FF00"));
+                        }
+                    }else{
+                        Log.e(TAG, "Error fetching Firestore data: ", task2.getException());
                     }
                 });
-//                String TotalDues = String.valueOf(quotationSum-transactionSum);
-//                totalDues.setText(TotalDues);
+//                String TotalDues = String.valueOf(quotationSum - transactionSum);
+
             } else {
                 Log.e(TAG, "Error fetching Firestore data: ", task.getException());
             }
