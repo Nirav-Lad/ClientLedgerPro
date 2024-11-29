@@ -31,6 +31,8 @@ public class activity_client extends AppCompatActivity {
     private Button addClient;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private LinearLayout parentLayout;
+    private TextView clientCount;
+    private ImageView detailsArrow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +44,15 @@ public class activity_client extends AppCompatActivity {
         transaction = findViewById(R.id.button_transactions);
         addClient = findViewById(R.id.add_client_button);
         parentLayout = findViewById(R.id.client_container);
+        clientCount = findViewById(R.id.clientCount);
+
 
         db.collection("client_details").orderBy("client_name").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
+                QuerySnapshot querySnapshot = task.getResult();
+                int size = querySnapshot.size();
+                clientCount.setText(String.valueOf(size));
+
                 for (QueryDocumentSnapshot document : task.getResult()) {
                     String clientName = document.getString("client_name");
                     String contact_no = document.getString("phone_number");
@@ -57,10 +65,16 @@ public class activity_client extends AppCompatActivity {
                     TextView clientNameTextView = itemView.findViewById(R.id.client_name);
                     TextView transactionNameTextView = itemView.findViewById(R.id.contact_no);
                     ImageView deleteIcon = itemView.findViewById(R.id.icon_transaction);
+                    detailsArrow = itemView.findViewById(R.id.chevron_right);
 
                     clientNameTextView.setText(clientName != null ? clientName : "Unknown Client");
                     transactionNameTextView.setText(contact_no != null ? contact_no : "No Details Available");
                     deleteIcon.setOnClickListener(v -> showDeleteConfirmationDialog(clientName));
+                    detailsArrow.setOnClickListener(v -> {
+                        Intent transactionIntent = new Intent(activity_client.this, pageUnderDevelopement.class);
+                        startActivity(transactionIntent);
+                        finish();
+                    });
 
                     // Add the inflated view to the parent layout
                     parentLayout.addView(itemView);

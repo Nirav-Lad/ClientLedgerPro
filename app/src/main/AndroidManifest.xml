@@ -13,6 +13,17 @@
         android:theme="@style/Theme.ClientLedgerPro"
         tools:targetApi="31">
         <activity
+            android:name=".pageUnderDevelopement"
+            android:exported="false" />
+        <activity
+            android:name=".pageUnderDevelopment"
+            android:exported="false"
+            android:theme="@style/Theme.ClientLedgerPro" />
+        <activity
+            android:name=".PageUnderDevelopement"
+            android:exported="false"
+            android:theme="@style/Theme.ClientLedgerPro" />
+        <activity
             android:name=".Testactivity"
             android:exported="false" />
         <activity

@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -28,6 +29,7 @@ public class client_dashboard extends AppCompatActivity {
     private float quotationSum;
     private float transactionSum;
     private TextView totalDues;
+    private ImageView logoutIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,13 +95,23 @@ public class client_dashboard extends AppCompatActivity {
             }
         });
 
+        logoutIcon = findViewById(R.id.imageView1);
 
+        logoutIcon.setOnClickListener(new View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View view) {
+                                            Intent intent  = new Intent(client_dashboard.this,pageUnderDevelopement.class);
+                                            startActivity(intent);
+                                            recreate();
+                                          }
+                                      });
 
         project.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent project=new Intent(client_dashboard.this, activity_project.class);
                 startActivity(project);
+                recreate();
             }
         });
 
@@ -108,6 +120,7 @@ public class client_dashboard extends AppCompatActivity {
             public void onClick(View view) {
                 Intent client=new Intent(client_dashboard.this, activity_client.class);
                 startActivity(client);
+                recreate();
             }
         });
 
@@ -116,6 +129,7 @@ public class client_dashboard extends AppCompatActivity {
             public void onClick(View view) {
                 Intent transaction=new Intent(client_dashboard.this, Transaction.class);
                 startActivity(transaction);
+                recreate();
             }
         });
     }

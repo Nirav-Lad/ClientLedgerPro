@@ -42,6 +42,8 @@ public class activity_project extends AppCompatActivity {
     private FirebaseFirestore db=FirebaseFirestore.getInstance();;
     private LinearLayout parentLayout;
     private ImageView deleteIcon;
+    private TextView projectCount;
+    private ImageView detailsArrow;
 
 
     @Override
@@ -56,6 +58,7 @@ public class activity_project extends AppCompatActivity {
             return insets;
         });
 
+        projectCount = findViewById(R.id.ProjectCount);
         client=findViewById(R.id.button_clients);
         transaction=findViewById(R.id.button_transactions);
         addProject=findViewById(R.id.addproject);
@@ -63,6 +66,10 @@ public class activity_project extends AppCompatActivity {
 
         db.collection("project_details").orderBy("project_name").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
+                QuerySnapshot querySnapshot = task.getResult();
+                int size = querySnapshot.size();
+                projectCount.setText(String.valueOf(size));
+
                 for (QueryDocumentSnapshot document : task.getResult()) {
                     String projectName = document.getString("project_name");
                     String clientName = document.getString("client_name");
@@ -75,6 +82,12 @@ public class activity_project extends AppCompatActivity {
                     deleteIcon = itemView.findViewById(R.id.icon_transaction);
                     TextView projectNameTextView = itemView.findViewById(R.id.projectNameField);
                     TextView clientNameTextView = itemView.findViewById(R.id.client_name);
+
+                    detailsArrow.setOnClickListener(v -> {
+                        Intent transactionIntent = new Intent(activity_project.this, pageUnderDevelopement.class);
+                        startActivity(transactionIntent);
+                        finish();
+                    });
 
                     projectNameTextView.setText(projectName != null ? projectName : "Unknown Client");
                     clientNameTextView.setText(clientName != null ? clientName : "No Details Available");

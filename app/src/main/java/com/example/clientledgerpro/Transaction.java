@@ -47,6 +47,7 @@ public class Transaction extends AppCompatActivity {
     private float quotationSum;
     private float transactionSum;
     private float TotalDues;
+    private ImageView  detailsArrow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,6 +115,12 @@ public class Transaction extends AppCompatActivity {
                                 TextView transactionDateTextView = itemView.findViewById(R.id.transaction_date);
                                 TextView clientNameTextView = itemView.findViewById(R.id.transaction_name);
                                 TextView transactionAmountTextView = itemView.findViewById(R.id.transaction_amount);
+
+                                detailsArrow.setOnClickListener(v -> {
+                                    Intent transactionIntent = new Intent(Transaction.this, pageUnderDevelopement.class);
+                                    startActivity(transactionIntent);
+                                    finish();
+                                });
 
                                 transactionDateTextView.setText(formattedDate != null ? formattedDate : "Unknown detail");
                                 clientNameTextView.setText(clientName != null ? clientName : "No Details Available");
