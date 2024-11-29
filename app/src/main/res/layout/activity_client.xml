@@ -295,7 +295,7 @@
 
         </LinearLayout>
     </ScrollView>
-    
+
 
 <!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
 <!--        android:id="@+id/bottom_navigation"-->
