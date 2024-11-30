@@ -115,6 +115,7 @@ public class Transaction extends AppCompatActivity {
                                 TextView transactionDateTextView = itemView.findViewById(R.id.transaction_date);
                                 TextView clientNameTextView = itemView.findViewById(R.id.transaction_name);
                                 TextView transactionAmountTextView = itemView.findViewById(R.id.transaction_amount);
+                                detailsArrow = itemView.findViewById(R.id.chevron_right);
 
                                 detailsArrow.setOnClickListener(v -> {
                                     Intent transactionIntent = new Intent(Transaction.this, pageUnderDevelopement.class);

@@ -82,11 +82,16 @@ public class activity_project extends AppCompatActivity {
                     deleteIcon = itemView.findViewById(R.id.icon_transaction);
                     TextView projectNameTextView = itemView.findViewById(R.id.projectNameField);
                     TextView clientNameTextView = itemView.findViewById(R.id.client_name);
+                    detailsArrow = itemView.findViewById(R.id.chevron_right);
 
-                    detailsArrow.setOnClickListener(v -> {
-                        Intent transactionIntent = new Intent(activity_project.this, pageUnderDevelopement.class);
-                        startActivity(transactionIntent);
-                        finish();
+                    detailsArrow.setOnClickListener(new View.OnClickListener() {
+
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(activity_project.this, pageUnderDevelopement.class);
+                            startActivity(intent);
+                            finish();
+                        }
                     });
 
                     projectNameTextView.setText(projectName != null ? projectName : "Unknown Client");

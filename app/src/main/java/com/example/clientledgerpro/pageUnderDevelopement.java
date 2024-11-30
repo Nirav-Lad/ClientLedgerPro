@@ -18,12 +18,7 @@ public class pageUnderDevelopement extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
 
-        back_button=findViewById(R.id.back_button);
-        back_button.setOnClickListener(view -> {
-            Intent intent = new Intent(pageUnderDevelopement.this, client_dashboard.class);
-            startActivity(intent);
-            finish();
-        });
+
 
         setContentView(R.layout.activity_page_under_developement);
 
@@ -31,6 +26,13 @@ public class pageUnderDevelopement extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        back_button=findViewById(R.id.back_button);
+        back_button.setOnClickListener(view -> {
+            Intent intent = new Intent(pageUnderDevelopement.this, client_dashboard.class);
+            startActivity(intent);
+            finish();
         });
 
 
